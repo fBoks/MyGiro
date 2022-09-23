@@ -55,10 +55,14 @@ a {
     color: black;
 }
 
+.container {
+    width: 100%;
+}
+
 /* HEADER */
 .header {
     display: block;
-    width: 1920px;
+    width: 100%;
 }
 .header-contacts {
     background-color: #f8f8f8;
@@ -67,7 +71,7 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    width: 1920px;
+    width: 100%;
     height: auto;
     min-height: 62px;
 
@@ -109,7 +113,6 @@ a {
     align-items: center;
 
     width: 100%;
-    min-width: 1420px;
     height: auto;
     min-height: 62px;
 
@@ -134,13 +137,11 @@ a {
 
 /* MAIN */
 .main-header {
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/scooter-3620869_960_720.jpg') 0 0/100% 100% no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/scooter-3620869_960_720.jpg') 0 0 / cover no-repeat;
 
     text-align: center;
 
-    width: 1920px;
-    min-width: 1400px;
-    height: 877px;
+    width: 100%;
     padding: 300px 0;
     margin: 0 0 100px 0;
 }
@@ -156,7 +157,7 @@ a {
     font-size: 24px;
     font-weight: 300;
 
-    padding: 0 400px;
+    padding: 0;
     margin-bottom: 30px;
 }
 .main-header-link {
@@ -178,6 +179,7 @@ a {
 
 /* MAIN-ADVANTAGES */
 .main-advantages {
+    width: 100%;
     padding: 0 20.5%;
 }
 .main-advantages header {
@@ -204,6 +206,7 @@ a {
 
 /* MAIN-ABOUTUS */
 .main-aboutUs {
+    width: 100%;
     padding: 0 20.5%;
     margin-bottom: 100px;
 }
@@ -224,7 +227,7 @@ a {
 /* MAIN_SUBSCRIPTION */
 .main-subscription {
     background-color: #ffa019;
-    width: 1920px;
+    width: 100%;
     height: 94px;
 
     display: flex;
@@ -294,6 +297,7 @@ a {
 
 /* MAIN_FEATURES */
 .main-features {
+    width: 100%;
     padding: 0 20.5%;
     margin-bottom: 100px;
 }
@@ -338,6 +342,7 @@ a {
 
 /* MAIN-CATALOG */
 .main-catalog {
+    width: 100%;
     padding: 0 18.5%;
     margin-bottom: 100px;
 }
@@ -461,7 +466,6 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    min-width: 900px;
 }
 .main-ourTeam-lineUp div {
     background-color: #fbfbfb;
@@ -516,7 +520,7 @@ a {
 .main-brands {
     background-color: #fbfbfb;
 
-    width: 1920px;
+    width: 100%;
     height: 192px;
 
     display: flex;
@@ -613,7 +617,7 @@ a {
 footer {
     padding: 5% 20.5%;
 
-    width: 1920px;
+    width: 100%;
     height: 352px;
 
     background-color: #fbfbfb;
@@ -673,17 +677,25 @@ footer {
 
 @media (max-width: 1700px) {
     .main-ourTeam-lineUp {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
     }
     .main-ourTeam-lineUp div {
         margin-bottom: 20px;
     }
+        .main-subscription {
+            display: block;
+            height: auto;
+    
+            padding: 20px 20.5%;
+        }
 }
 
 @media (max-width: 1420px) {
     .header {
-        max-width: 1200px;
+        max-width: 1400px;
         display: flex;
+        justify-content: center;
     }
 
     .header-contacts {
@@ -704,10 +716,10 @@ footer {
     }
 
     .main-header header {
-        width: 1400px;
+        max-width: 1400px;
     }
     .main-header-description {
-        width: 1400px;
+        max-width: 1400px;
     }
     .main-header-link {
         max-width: 1400px;
@@ -788,20 +800,21 @@ footer {
     }
 }
 
-@media (max-width: 1000px) {
-    .header-container-nav ul li {
+@media (max-width: 1200px) {
+    .main-subscription-form input, button {
         display: block;
+        margin: auto auto 20px 0;
     }
+    .main-features-lists {
+        flex-direction: column;
+    }
+    .main-features-lists ul:first-child {
+        margin-bottom: 20px;
+    }
+}
 
-    .main-header header {
-        max-width: 1000px;
-    }
-    .main-header-description {
-        max-width: 1000px;
-    }
-    .main-header-link {
-        max-width: 1000px;
-    }
+@media (max-width: 1000px) {
+    
 
     .main-advantages section {
         display: block;
@@ -809,9 +822,22 @@ footer {
     .main-advantages section figure {
         display: block;
     }
+}
 
-    .main-subscription-form input, button {
+@media (max-width: 512px) {
+    .header-container-nav ul li {
         display: block;
-        margin: 0 0 20px 0;
+    }
+
+    .main-header header {
+        max-width: 480px;
+    }
+
+    .main-header-description {
+        max-width: 480px;
+    }
+
+    .main-header-link {
+        max-width: 480px;
     }
 }
